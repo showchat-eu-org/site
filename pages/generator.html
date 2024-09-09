@@ -1,0 +1,101 @@
+---
+layout: webmasteri
+title: Generator WebChat
+permalink: blog/webmasteri/generator-webchat
+---
+
+<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
+<section id="container-centre" class="column centre flex-1" aria-label="Summary and features">
+
+<h1 class="page-title text-5xl md:text">Generator WebChat</h1>
+
+<p>
+<img class="bloghead" src="{{ site.url }}/assets/images/webmaster/generator.png" alt="blog header">
+</p>
+<br>
+
+<ul>Vă oferim posibilitatea de a utiliza configuratorul nostru pentru a genera un cod javascript pe care nu va trebui decât să îl lipiți codul în site-ului dvs.</ul>
+<ul>Una dintre cele mai frecvente probleme atunci când doriți să oferiți o experiență IRC bună utilizatorilor site-ului dvs. web este existența unor limitări majore în aplicațiile existente.</ul>
+<ul>Limitări, de la incapacitatea de a conecta mai mulți utilizatori fără a plăti pentru o versiune „Premium” sau necesitatea de a vă înregistra în sisteme terțe pentru a accesa conversațiile online.</ul>
+<ul>Cod-ul nostru de javascript vine să acopere aceste nevoi și multe altele.</ul>
+<ul>Oferim, o aplicație de chat care poate fi integrată în orice pagină web, fie într-o intrare, fie pe o pagină prin adăugarea unui cod simplu și accesarea unui canal sau cameră existentă sau creând unul nou pentru ocazie, astfel încât utilizatorii să poată discuta fără probleme.</ul>
+<br>
+<p>Acest cod este gratuit oferă actualizări și asistență gratuită</p>
+<br>
+
+	<div id="wrapper">
+                <h1>Generator de chat încorporat</h1>
+		<label for="nick">Nick utilizator:</label>
+		<input type="text" id="nick" name="nick" placeholder="ShowChat"><br>
+
+		<label for="channels">Canale:</label>
+		<input type="text" id="channels" name="channels" value="#Romania,#RadioClick" placeholder="#Canal1,#Canal2">
+		<br>
+		<span class="note">Nu uitați să vă puneți canalele separate prin virgulă și cu un „#”, de exemplu #Romania,#RadioClick</span>
+		<br></br>
+
+		<label for="templates">Stilul webchat:</label>
+		<select id="templates" name="templates">
+		    <option value="osprey">Osprey</option>
+			<option value="dark">Dark</option>
+			<option value="coffee">Coffee</option>
+			<option value="grayfox">GrayFox</option>
+			<option value="nightswatch">Nightswatch</option>
+			<option value="radioactive">Radioactive</option>
+			<option value="sky">Sky</option>
+		</select>
+		<br></br>
+
+        <label for="height">înălţime:</label>
+		<input type="text" id="height" name="height" value="550" placeholder="600" size="4"><br>
+        
+		<label for="width">lăţime:</label>
+		<input type="text" id="width" name="width" value="100%" placeholder="100%" size="4" disabled="1"><br>
+
+
+        	<label for="server">Alege Server:</label>
+		<select id="server" name="server">
+		    <option value="kiwiirc.showchat.eu.org">On Proxy</option>
+			<option value="kiwi.romaniachat.eu:8443">Off Proxy</option>
+		</select>
+		<br></br>
+
+
+
+
+
+ <td>
+                                <input type="checkbox"  id="tick" onchange="document.getElementById('terms').disabled = !this.checked;" /> Sunt de acord cu <a href="/termeni-si-conditii" target="_blank">Termeni & Conditii</a>
+            <td>
+            <p></p>
+            </td>
+			<br>
+                            </td>
+                          </tr>
+                            <td class="label1"></td>
+                            <td align="right">
+                                <button type="submit" class="btn btn1" name="terms" id="terms" onclick="generateCode()" disabled>Generați Chatul</i></button>
+								
+								
+								 <button onclick="previewCode()">Previzualizare</i></button>
+                            </td>
+
+         <br></br>
+		<div>
+			<textarea id="code" rows="3" cols="90" readonly></textarea>
+		</div>
+		<br>
+                <span class="note">Configurați/copiați și lipiți-l pe site-ul dvs. web.</span><br>
+        <br>
+		<div id="preview-container"></div>
+	</div>
+
+
+<div class="content"><p></p>
+</div>
+
+</section>
+
+ {% include parteneri.html %}
+
+</main>

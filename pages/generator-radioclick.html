@@ -1,0 +1,236 @@
+---
+layout: default
+title: Generator RadioClick Romania Player
+permalink: /blog/webmasteri/generator-radioclick-romania-player
+---
+
+<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
+<section id="container-centre" class="column centre flex-1" aria-label="Summary and features">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link href="https://api.showchat.eu.org/radioclick/css/radioclick.css" rel="stylesheet" type="text/css">
+
+<h1 class="page-title text-5xl md:text">Generator RadioClick Romania Player</h1>
+
+<p>
+<img class="bloghead" src="{{ site.url }}/assets/images/webmaster/generator.png" alt="blog header">
+</p>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		<h3 class="text-light title1">Setări</h3>
+         <!-- stream server -->
+         <input id="server" value="live.radioclick.ro:8008" type="hidden"> 
+         <!-- stream type -->
+         <input id="type" value="2" type="hidden">
+
+			<div class="form-group">
+				<label for="Is your website https?" class="text-light">Site-ul dvs. are https?</label>
+				<select class="form-control" id="https">
+					<option value="false" selected>Nu</option>
+					<option value="true">Da</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="Autoplay" class="text-light">Redare automata</label>
+				<select class="form-control" id="autoplay">
+					<option value="false" selected>Nu</option>
+					<option value="true">Da</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="Layout" class="text-light">Schemă</label>
+				<select class="form-control" id="layout">
+					<option value="vertical">Vertical</option>
+					<option value="horizontal" selected>Horizontal</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="Background color" class="text-light">Culoare de fundal</label>
+				<select class="form-control" id="bg">
+					<option value="red">Red</option>
+					<option value="pink">Rose</option>
+					<option value="purple">Purple</option>
+					<option value="deeppurple">Deep Purple</option>
+					<option value="indigo">Indigo</option>
+					<option value="blue">Blue</option>
+					<option value="lightblue">Light Blue</option>
+					<option value="cyan">Cyan</option>
+					<option value="teal">Teal</option>		
+					<option value="green">Green</option>
+					<option value="lightgreen">Light Green</option>
+					<option value="lime">Lime</option>
+					<option value="yellow">Yellow</option>
+					<option value="amber">Amber</option>
+					<option value="orange">Orange</option>
+					<option value="deeporange">Deep Orange</option>
+					<option value="brown">Brown</option>
+					<option value="grey" selected>Grey</option>
+					<option value="bluegrey">Blue Grey</option>
+					<option value="black">Black</option>
+					<option value="white">White</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="Play button color" class="text-light">Reda culoarea butonului</label>
+				<select class="form-control" id="accent">
+					<option value="red">Red</option>
+					<option value="pink">Rose</option>
+					<option value="purple">Purple</option>
+					<option value="deeppurple">Deep Purple</option>
+					<option value="indigo">Indigo</option>
+					<option value="blue">Blue</option>
+					<option value="lightblue">Light Blue</option>
+					<option value="cyan">Cyan</option>
+					<option value="teal">Teal</option>		
+					<option value="green">Green</option>
+					<option value="lightgreen">Light Green</option>
+					<option value="lime">Lime</option>
+					<option value="yellow">Yellow</option>
+					<option value="amber">Amber</option>
+					<option value="orange">Orange</option>
+					<option value="deeporange" selected>Deep Orange</option>
+					<option value="brown">Brown</option>
+					<option value="grey">Grey</option>
+					<option value="bluegrey">Blue Grey</option>
+					<option value="black">Black</option>
+					<option value="white">White</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="Blur" class="text-light">Estompa/Umbră</label>
+				<select class="form-control" id="blur">
+					<option value="false" selected>Nu</option>
+					<option value="true">Da</option>
+				</select>
+			</div>
+
+		</div>
+	</div>
+<div class="content"><p></p>
+</div>	
+<strong>RadioClick Romania Previzualizare live</strong>
+<br></br>
+<div class="rcr" id="radioclick"></div>
+<br></br>
+<div id="codes"></div>
+<h3 class="text-light title1">Codul pentru site-ul dvs. web</h3>
+<button type="button" class="btn btn-success btn-lg btn-block" id="generate">Generați codul</button>	
+</div>
+
+<script src="https://api.showchat.eu.org/radioclick/js/radioclick.js"></script>
+<script>
+    $("#radioclick").rcr({
+	URL: "https://live.radioclick.ro:8008",
+        version: "2",
+        autoplay: true
+    });
+	
+	
+	$(document).ready(function(){
+ 
+		$(".player-wpr").css('margin', '0 auto');  
+
+		$("#bg").on('change', function() {
+				var bg = $("#bg").val();
+				var accent = $("#accent").val();
+				$(".bg-wpr").attr('class', 'bg-wpr bg-' + bg + ' accent-' + accent);
+		});
+		
+		$("#accent").on('change', function() {
+				var bg = $("#bg").val();
+				var accent = $("#accent").val();
+				$(".bg-wpr").attr('class', 'bg-wpr bg-' + bg + ' accent-' + accent);
+		});
+
+		$("#layout").on('change', function() {				
+				var layout = $("#layout").val();				
+				$(".player-wpr").attr('class', 'player-wpr ' + layout);
+		});
+
+		$("#blur").on('change', function() {
+				var blur = $("#blur").val();
+				if (blur == "true"){
+					$(".blur").css('display', 'block');
+				}
+				else if (blur == "false"){
+					$(".blur").css('display', 'none');
+				}
+		});
+		
+		$("#generate").click(function () {
+		var server = $("#server").val();
+		var type = $("#type").val();
+		var mount = $("#mount").val();
+		var layout = $("#layout").val();
+		var bg = $("#bg").val();
+		var accent = $("#accent").val();
+		var blur = $("#blur").val();
+		var https = $("#https").val();
+		var autoplay = $("#autoplay").val();
+		if(type == "icecast"){
+			var mount_point = "mount_point: '" + mount + "', ";
+		}
+		else{
+			var mount_point = "";
+		}
+		if(layout == "horizontal"){
+			var layouts = "false";
+		}
+		else{
+			var layouts = "true";
+		}
+		$("#codes").html(
+		"<div class='card text-red bg-secondary mb-3'>" +
+		"<div class='card-header'>Tastatura de comandă: Control (Ctrl) + C Copiați și Control (Ctrl) + V Lipire</div>" +
+		"</div>" +
+		"<div class='card text-red bg-secondary mb-3'>" + 
+			"<div class='card-header'>Copiați și lipiți acest lucru în interior &lt;head&gt;&lt;/head&gt; din pagina dvs.</div>" +
+			"<div class='card-body' style='font-size: 14px'>" +
+				"<p class='card-text'>&lt;link href=&quothttps://api.showchat.eu.org/radioclick/css/radioclick.css&quot rel=&quotstylesheet&quot type=&quottext/css&quot&gt;<br>&lt;script src=&quothttps://code.jquery.com/jquery-3.0.0.min.js&quot&gt;&lt;/script&gt;</p>" +
+			"</div>" +
+		"</div>" +
+		"<div class='card text-red bg-secondary mb-3'>" + 
+			"<div class='card-header'>Copiați și lipiți acest lucru chiar în partea de jos a paginii, în interior &lt;body&gt;&lt;/body&gt;</div>" +
+			"<div class='card-body' style='font-size: 14px'>" +
+				"&lt;script src=&quothttps://api.showchat.eu.org/radioclick/js/radioclick.js&quot&gt;&lt;/script&gt;" +
+				"<pre class='text-red'>" +
+					"&lt;script&gt; <br>" +
+					"$('#radioclick').rcr({ <br>" +
+					"URL: 'https://" + server + "', " +
+					"version: '" + type + "', " +
+					"mount_point: '" + mount + "', " +
+					"vertical_layout: " + layouts + ", <br>" +
+					"bg: '" + bg + "', " +
+					"accent: '" + accent + "', " +
+					"blur: " + blur + ", " + 
+					"autoplay: " + autoplay + ", " +
+					"enable_cors: " + https + ", " +
+					"}); <br>" +
+					"&lt;/script&gt;</pre>" +
+			"</div>" +
+		"</div>" +
+		"<div class='card text-red bg-secondary mb-3'>" +
+			"<div class='card-header'>Copiați și lipiți asta oriunde doriți să apară playerul</div>" +
+			"<div class='card-body'>" +
+				"&lt;div class=&quotrcr&quot id=&quotradioclick&quot&gt;&lt;/div&gt;" +
+			"</div>" +
+		"</div>" 
+		);
+    });
+
+	});
+</script>
+
+
+
+
+<div class="content"><p></p>
+</div>
+
+</section>
+
+{% include parteneri.html %}
+
+</main>
