@@ -1,0 +1,123 @@
+body {
+	background-color: black;
+	color: black;
+}
+
+#wrapper {
+	1margin: 50px auto;
+	1padding: 20px;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 5px;
+}
+
+h11 {
+    text-align: center;
+}
+
+label {
+	display: inline-block;
+	width: 120px;
+}
+
+input[type="text"],
+select {
+        font-size: 1.2em;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	background-color: white; 
+	color: red; 
+	margin-bottom: 10px;
+}
+
+button {
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #e1638c; 
+	color: black;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+}
+
+textarea {
+	font-size: 1.2em;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: red;
+}
+
+.note {
+	font-size: 14px;
+	color: gold;
+}
+h11 {
+    color: #D4AF37;
+    text-shadow: 0 0 4px #D4AF37;
+    opacity: .8;
+    animation: flicker 4s 8s infinite
+}
+
+@keyframes flicker {
+    0% {
+        color: #000000
+    }
+
+    5% {
+        color: #ffd700
+    }
+
+    7% {
+        color: #000
+    }
+
+    9% {
+        color: #fff
+    }
+
+    10% {
+        color: #f80
+    }
+
+    11% {
+        color: #D4AF37
+    }
+
+    40% {
+        color: #000000
+    }
+
+    70% {
+        color: #000000
+    }
+
+    to {
+        opacity: .5
+    }
+}
+.note {
+    font-size: 17px;
+    color:#111;
+}
+@media (max-width: 600px) {
+  button {
+  display: block;
+  margin: 10px auto;
+}
+}
+
+#preview-container {
+border: 1px solid #f21b1b; 
+}
+
+.text-lg {
+    font-size: 1.125rem
+}
