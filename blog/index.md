@@ -52,7 +52,6 @@ permalink: /blog
       </article>
     </a>
   </div>
-  
         <div class="item-10">
     <a href="{{ site.url }}/blog/cum-sa-dati-o-recenzie-a-pluginului-pe-wordpress" class="card">
       <div class="thumb-2" style="background-image: url({{ site.url }}/assets/images/webmaster/review-tool840x240.png);"></div>
@@ -63,18 +62,6 @@ permalink: /blog
       </article>
     </a>
   </div>
-  
-          <div class="item-10">
-    <a href="{{ site.url }}/blog/cum-sa-dati-o-recenzie-a-pluginului-pe-wordpress" class="card">
-      <div class="thumb-2" style="background-image: url({{ site.url }}/assets/images/webmaster/review-tool840x240.png);"></div>
-      <article>
-        <h1>Cum să dați o recenzie a pluginului pe depozitul WordPress?</h1>
-		<p>Revizuirea unui plugin WordPress</p>
-        <span>#webmaster, #review</span>
-      </article>
-    </a>
-  </div>
-  
-  <br>
-  </div>
 
+<br>
+  </div>
